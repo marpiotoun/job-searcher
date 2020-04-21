@@ -1,10 +1,10 @@
-from flask import Flask
+from flask import Flask, render_template
 
 
 app = Flask('Programmer-Job Searcher')
 
 @app.route('/')
 def home():
-    return "hi"
+    return render_template("home.html")
 
 app.run()
