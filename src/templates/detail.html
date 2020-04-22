@@ -5,7 +5,12 @@
     <title>Programmer-Job Searcher</title>
 </head>
 <body>
-    <h1>Welcome To Programmer-Job Searcher</h1>
+    {% for obj in objs %}
+        <div>
+            <h4>{{obj.author|safe}}:</h4>
+            <p>{{obj.comment_text|safe}}</p>
+        </div>
+    {% endfor %}
     <footer>
         &copy;Nomad Coder Student marpi
     </footer>

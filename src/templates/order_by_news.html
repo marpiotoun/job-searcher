@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Marpi News</title>
+</head>
+<body>
+    <header>
+        <h1>Marpi News</h1>
+        <div>
+            <span>Order By </span>
+            <a href='/?order_by=new'>New</a>
+            <span> / </span>
+            <a href='/?order_by=popular'>Popular</a>
+        </div>
+    </header>
+    <table>
+        <tbody>
+        {% for obj in objs %}
+        {% if obj.title %}
+            <tr>
+                <td class="story_title">{{obj.title|safe}}</td>
+                <td class="story_comment-link"><a href="/{{obj.objectID}}">{{obj.url|safe}}</a></td>
+                <td class="story_author">{{obj.author|safe}}</td>
+                <td class="story_points">{{obj.points|safe}}</td>
+                <td class="story_comments">{{obj.num_comments|safe}}</td>
+            </tr>
+        {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <footer>
+        &copy;Nomad Coder Student marpi
+    </footer>
+</body>
+</html>
